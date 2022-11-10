@@ -1,0 +1,15 @@
+#bar {
+    margin-top: 2rem;
+    width: 100%;
+    background-color:var(--dark-white);
+    border-radius: 2rem;
+}
+
+#progress {
+    width: 80%;
+    height: 1rem;
+    background-color: var(--moderate-cyan);
+    border-radius: 2rem;
+}
+
+/* h */

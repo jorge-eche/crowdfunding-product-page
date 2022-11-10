@@ -1,0 +1,18 @@
+.card-style {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1.5px solid rgba(192,192,192, .5);
+    border-radius: .5rem;
+}
+
+.no-stock {
+    opacity: .5;
+}
+
+.no-stock button {
+    background-color: var(--gray-text);
+}
+
+.no-stock button:active {
+    background-color: var(--gray-text);
+}
