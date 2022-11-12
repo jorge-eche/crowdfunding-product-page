@@ -1,10 +1,13 @@
 hr {
     width: 30%;
+    height: 1px;
     max-width: 5.6rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    opacity: .7;
+    background-color: hsla(0, 0%, 48%, .3);
+    border-width: 0px;
+
 }
 
 .numbers {
@@ -12,7 +15,14 @@ hr {
     font-size: 2.3rem;
     font-weight: 700;
     margin-bottom: -.5rem;
+    text-align: center;
 }
+
+.numbers2 {
+    margin-top: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+  }
 
 @media (min-width: 660px) {
     #container-stats {
@@ -20,13 +30,12 @@ hr {
     }
 
     hr {
-        /* transform: rotate(90deg); */
         width: 1px;
         height: 4rem;
+        border-width: 0px;
     }
 
     .row {
-        /* width: 80%; */
         display: grid;
         grid-template-columns: 1fr .5fr 1fr .5fr 1fr;
     }  

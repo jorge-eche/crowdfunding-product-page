@@ -5,6 +5,65 @@
     border-radius: .5rem;
 }
 
+.card-title h1 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.card-style h2 {
+    font-size: 1rem;
+    text-align: left;
+    color: var(--moderate-cyan);
+}
+
+.card-style p {
+    text-align: left;
+    line-height: 1.6rem;
+}
+
+#flex2 {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.num-left {
+    display: inline;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.num-left + p {
+    color: var(--gray-text);
+    font-size: 1.1rem;
+    font-weight: 500;
+
+}
+
+.card-style button {
+    width: 70%;
+    padding: 1rem;
+    max-width: 11rem;
+    max-height: 3rem;
+}
+
+
+@media (min-width: 660px) {
+    .card-title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #flex1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 .no-stock {
     opacity: .5;
 }
