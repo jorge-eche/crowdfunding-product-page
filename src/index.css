@@ -27,7 +27,7 @@ p {
 }
 
 button {
-  color: white;
+  color: rgba(255,255,255, .9);
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;

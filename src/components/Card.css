@@ -1,6 +1,6 @@
 .card-style {
     margin-top: 2rem;
-    padding: 1.5rem;
+    padding: 1.8rem;
     border: 1.5px solid rgba(192,192,192, .5);
     border-radius: .5rem;
 }
@@ -21,6 +21,7 @@
 .card-style p {
     text-align: left;
     line-height: 1.6rem;
+    margin-top: 2rem;
 }
 
 #flex2 {
@@ -37,10 +38,7 @@
 }
 
 .num-left + p {
-    color: var(--gray-text);
     font-size: 1.1rem;
-    font-weight: 500;
-
 }
 
 .card-style button {
