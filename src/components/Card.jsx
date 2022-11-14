@@ -1,10 +1,11 @@
 import './Card.css'
 
 const Card = ({
-  pledge,
+  card,
   type}) => {
   
-    const { title, subtitle, description, amount } = pledge
+  const { title, subtitle, description, amount } = card
+  
   return (
     <div className={`card-style ${type}`}>
       <div className='card-title'>
@@ -14,16 +15,18 @@ const Card = ({
 
       <p>{description}</p>
 
+
+
       <div id="flex1">
-        <div id='flex2'>
-          <p className='num-left'>{amount}</p>
-          <p>left</p>
-        </div>
-                
+        {amount && (
+            <div id='flex2'>
+              <p className='num-left'>{amount}</p>
+              <p>left</p>
+            </div>      
+        )}              
         <button>Select Reward</button>    
       </div>
     </div>
-  )
-}
+  )}
 
 export default Card

@@ -2,11 +2,11 @@ import './Header.css'
 import CrowfundIcon from '../img/logo.svg'
 import HamburgerIcon from '../img/icon-hamburger.svg'
 
-const Header = ({menu}) => {
+const Header = ({menuHeader}) => {
   return (
     <header className="header">
 
-      {!menu && (
+      {!menuHeader && (
         <>
           <div id='bar-crowfund'>
             <img src={CrowfundIcon} alt="" />

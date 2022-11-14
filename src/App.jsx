@@ -3,27 +3,38 @@ import Header from './components/Header'
 import BackThisProject from './components/BackThisProject'
 import Stats from './components/Stats'
 import About from './components/About'
-import Menu from './components/Menu'
+import Modal from './components/Modal'
 
 function App() {
 
   const [funds, setFunds] = useState(89914)
   const [backers, setBackers] = useState(5007)
-  const [menu, setMenu] = useState(false)
+
+  const [modal, setModal] = useState(true)
+  const [menuHeader, setMenuHeader] = useState(false)
+  const [menuCards, setMenuCards] = useState(true)
+
 
   return (
-    <div className={ menu ? 'fix' : ''}>
+    <div className={ modal ? 'fix' : ''}>
       <Header
-      menu={menu}
+      menuHeader={menuHeader}
       />
       <BackThisProject/>
       <Stats
       funds= {funds}
       backers = {backers}
       />
-      <About/>
+      <About
+      menuCards={menuCards}
+      />
 
-      {menu &&<Menu/>}      
+      {modal && (
+      <Modal
+      menuHeader={menuHeader}
+      menuCards={menuCards}
+      />
+      )}      
       
     </div>
   )

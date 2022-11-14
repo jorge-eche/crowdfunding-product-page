@@ -1,10 +1,10 @@
-import './Menu.css'
+import './MenuHeader.css'
 import CrowfundIcon from '../img/logo.svg'
 import CloseMenu from '../img/icon-close-menu.svg' 
 
-const Menu = () => {
+const MenuHeader = () => {
   return (
-    <div className='menu'>
+    <>
         <div className='menu-icons'>
             <div id='menu-crowfund'>
                 <img src={CrowfundIcon} alt="Crowfund Logo" />
@@ -22,9 +22,8 @@ const Menu = () => {
           <li className="menu-item"><span>Get Started</span></li>
         </ul>
       </nav>   
-    </div>
-
+    </>
   )
 }
 
-export default Menu
+export default MenuHeader

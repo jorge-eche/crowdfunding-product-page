@@ -27,7 +27,6 @@
 #flex2 {
     display: flex;
     gap: .5rem;
-    margin-bottom: 1.5rem;
 }
 
 .num-left {
@@ -42,6 +41,7 @@
 }
 
 .card-style button {
+    margin-top: 1.5rem;
     width: 70%;
     padding: 1rem;
     max-width: 11rem;

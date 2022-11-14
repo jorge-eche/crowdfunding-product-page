@@ -2,7 +2,7 @@ import Cards from './Cards'
 import './About.css'
 
 
-const About = () => {
+const About = ({menuCards}) => {
   return (
     <div className="container">
         <p id="title">About this project</p>
@@ -11,7 +11,9 @@ const About = () => {
   your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
         <p className='about-text'>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
   to allow notepads, pens, and USB sticks to be stored under the stand.</p>
-        <Cards/>
+        <Cards
+        menuCards={menuCards}
+        />
     </div>
   )
 }
