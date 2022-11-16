@@ -5,6 +5,21 @@
     border-radius: .5rem;
 }
 
+.card-style .flex-row {
+    display: flex;
+}
+
+#ball {
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid rgba(192,192,192, .4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-title h1 {
     margin-top: 0;
     margin-bottom: .5rem;
@@ -24,7 +39,7 @@
     margin-top: 2rem;
 }
 
-#flex2 {
+#flex1 {
     display: flex;
     gap: .5rem;
 }
@@ -40,12 +55,36 @@
     font-size: 1.1rem;
 }
 
+.num-left-modal {
+    font-size: 2rem;
+}
+
 .card-style button {
     margin-top: 1.5rem;
     width: 70%;
     padding: 1rem;
     max-width: 11rem;
     max-height: 3rem;
+}
+
+#flex2 {
+    display: flex;
+}
+
+.card-style:focus {
+    border: 1.5px solid var(--moderate-cyan);
+    outline: none;
+}
+
+.card-style:focus #green-ball {
+    width: 1rem;
+    height: 1rem;
+    border-radius: inherit;
+    background-color: var(--moderate-cyan);
+}
+
+.card-style:focus  #enter-pledge {
+    display: block;
 }
 
 

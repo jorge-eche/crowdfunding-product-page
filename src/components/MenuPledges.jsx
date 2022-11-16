@@ -1,4 +1,3 @@
-import Card from "./Card"
 import Cards from "./Cards"
 import './MenuPledges.css'
 

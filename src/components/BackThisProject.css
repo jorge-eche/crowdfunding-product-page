@@ -35,15 +35,27 @@
     cursor: pointer;
 }
 
-.flex-wrapper-bookmark:active circle  {
+circle {
+    transition: fill .3s ease;
+}
+
+.flex-wrapper-bookmark:hover circle  {
     fill: hsl(176, 72%, 28%);
 }
 
-.flex-wrapper-bookmark:active path  {
+path {
+    transition: fill .3s ease;
+}
+
+.flex-wrapper-bookmark:hover path  {
     fill: white;
 }
 
-.flex-wrapper-bookmark:active #bookmark  {
+#bookmark {
+    transition: color .3s ease;
+}
+
+.flex-wrapper-bookmark:hover #bookmark  {
     color: var(--dark-cyan);
 }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Card from './Card.jsx'
 
+
 const Cards = ({menuCards}) => {
 
     const [cards, setCards] = useState([
@@ -37,11 +38,13 @@ const Cards = ({menuCards}) => {
         {menuCards ? (
             <>
                 {cards.map(card => (
-                    <Card
-                    card={card}
-                    type={card.amount === 0 ? 'no-stock' : ''}
-                    />
+                        <Card
+                        card={card}
+                        menuCards={menuCards}
+                        type={card.amount === 0 ? 'no-stock' : ''}
+                        />
                 ))}
+
             </>
         ) : (
             <>
@@ -49,6 +52,7 @@ const Cards = ({menuCards}) => {
                 filteredCards.map(card => (
                     <Card
                     card={card}
+                    menuCards={menuCards}
                     type={card.amount === 0 ? 'no-stock' : ''}
                     />
                 ))}
