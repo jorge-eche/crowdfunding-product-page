@@ -1,7 +1,6 @@
 .card-style {
     margin-top: 2rem;
-    padding: 1.8rem;
-    border: 1.5px solid rgba(192,192,192, .5);
+    border: 1.5px solid var(--opac-borders);
     border-radius: .5rem;
 }
 
@@ -9,11 +8,16 @@
     display: flex;
 }
 
+#card-margin {
+    margin: 1.8rem 1.8rem 0;
+    position: relative;
+}
+
 #ball {
     margin-right: 1rem;
     width: 2rem;
     height: 2rem;
-    border: 1.5px solid rgba(192,192,192, .4);
+    border: 1.5px solid var(--opac-borders);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -27,20 +31,33 @@
     text-align: left;
 }
 
-.card-style h2 {
+.card-title-modal h1:hover {
+    cursor: pointer;
+    color: var(--moderate-cyan);
+}
+
+.no-stock .card-title-modal h1:hover {
+    cursor:auto;
+    color: black;
+}
+
+.card-title h2 {
     font-size: 1rem;
     text-align: left;
     color: var(--moderate-cyan);
 }
 
-.card-style p {
+.card-style .pledge-description {
     text-align: left;
     line-height: 1.6rem;
     margin-top: 2rem;
 }
 
 #flex1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
+    align-items: center;
     gap: .5rem;
 }
 
@@ -51,40 +68,47 @@
     font-weight: 700;
 }
 
-.num-left + p {
-    font-size: 1.1rem;
-}
-
 .num-left-modal {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .card-style button {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0 1.8rem 1.8rem;
     width: 70%;
     padding: 1rem;
     max-width: 11rem;
     max-height: 3rem;
 }
 
+.no-stock.card-style button:hover {
+    cursor: pointer;
+    background-color: var(--gray-text);
+  }
+
 #flex2 {
     display: flex;
+    justify-content: space-between;
 }
 
-.card-style:focus {
+.card-style-modal:focus {
     border: 1.5px solid var(--moderate-cyan);
     outline: none;
 }
 
-.card-style:focus #green-ball {
+.no-stock.card-style-modal:focus{
+    border: 1.5px solid rgba(192,192,192, .5);
+}
+
+.card-style-modal:focus #green-ball {
     width: 1rem;
     height: 1rem;
     border-radius: inherit;
     background-color: var(--moderate-cyan);
 }
 
-.card-style:focus  #enter-pledge {
-    display: block;
+.no-stock.card-style-modal:focus #green-ball {
+    width: 0;
+    height: 0;
 }
 
 
@@ -94,10 +118,25 @@
         justify-content: space-between;
     }
 
+    .card-title h2 {
+        margin-left: 1rem;
+    }
+
+    .card-style .pledge-description {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        margin-left: 3rem;
+    }
+
     #flex1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    .move-numbers {
+        position: absolute;
+        top: -1.5rem;
+        right: 1rem;
     }
 }
 

@@ -34,6 +34,10 @@
     margin: 2rem 1.5rem 0 0 ;
 }
 
+#bar-hamburger {
+    cursor: pointer;
+}
+
 @media (min-width: 660px) {
     .header {
         background-image: url(../img/image-hero-desktop.jpg);

@@ -2,7 +2,12 @@ import './MenuHeader.css'
 import CrowfundIcon from '../img/logo.svg'
 import CloseMenu from '../img/icon-close-menu.svg' 
 
-const MenuHeader = () => {
+const MenuHeader = ({
+  setModal,
+  setMenuHeader,
+  setMenuCards,
+  hideModal
+}) => {
   return (
     <>
         <div className='menu-icons'>
@@ -10,7 +15,7 @@ const MenuHeader = () => {
                 <img src={CrowfundIcon} alt="Crowfund Logo" />
             </div>
 
-            <div id='close-menu' >
+            <div id='close-menu' onClick={hideModal}>
                 <img  src={CloseMenu} alt="Close Menu" />
             </div>
         </div>

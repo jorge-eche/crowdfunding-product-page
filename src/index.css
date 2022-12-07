@@ -11,8 +11,9 @@ html {
   --moderate-cyan: hsl(176, 50%, 47%);
   --dark-cyan: hsl(176, 72%, 28%);
   --black: hsl(0, 0%, 0%);
-  --gray-text: #969696;
   --dark-gray: hsl(0, 0%, 48%);
+  --gray-text: #969696;
+  --opac-borders: rgba(192,192,192, .5);
 }
 
 body {

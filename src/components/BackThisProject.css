@@ -39,7 +39,7 @@ circle {
     transition: fill .3s ease;
 }
 
-.flex-wrapper-bookmark:hover circle  {
+.flex-wrapper-bookmark:active circle  {
     fill: hsl(176, 72%, 28%);
 }
 
@@ -47,7 +47,7 @@ path {
     transition: fill .3s ease;
 }
 
-.flex-wrapper-bookmark:hover path  {
+.flex-wrapper-bookmark:active path  {
     fill: white;
 }
 
@@ -55,7 +55,7 @@ path {
     transition: color .3s ease;
 }
 
-.flex-wrapper-bookmark:hover #bookmark  {
+.flex-wrapper-bookmark:active #bookmark  {
     color: var(--dark-cyan);
 }
 

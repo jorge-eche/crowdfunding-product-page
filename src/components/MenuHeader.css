@@ -1,3 +1,7 @@
+#close-menu:hover {
+    cursor: pointer;
+}
+
 .menu-icons {
     width: 90%;
     max-width: 500px;

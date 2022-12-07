@@ -2,7 +2,10 @@ import './Header.css'
 import CrowfundIcon from '../img/logo.svg'
 import HamburgerIcon from '../img/icon-hamburger.svg'
 
-const Header = ({menuHeader}) => {
+const Header = ({
+  menuHeader,
+  showMenuHeader
+}) => {
   return (
     <header className="header">
 
@@ -12,7 +15,7 @@ const Header = ({menuHeader}) => {
             <img src={CrowfundIcon} alt="" />
           </div>
 
-          <div id='bar-hamburger' >
+          <div id='bar-hamburger' onClick={showMenuHeader} >
             <img  src={HamburgerIcon} alt="" />
           </div>
         </> 

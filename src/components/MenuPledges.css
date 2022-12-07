@@ -1,6 +1,31 @@
+
 .container.container-modal-cards {
     transform: none;    
     margin-top: 8rem;
+    opacity: 0;
+    transition: all 2s linear 1s;
+}
+
+.container.container-modal-cards.animate-menu-pledge {
+    opacity: 1;
+}
+
+.header-modalcards {
+    position: relative;
+}
+
+#close-menu-pledges {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#close-menu-pledges:hover {
+    cursor: pointer;
+}
+
+#close-menu-pledges:active path {
+    opacity: 1;
 }
 
 .header-modalcards h1 {

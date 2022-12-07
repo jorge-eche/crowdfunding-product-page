@@ -1,34 +1,18 @@
 import { useState } from 'react'
 import Card from './Card.jsx'
+import {options} from '../data/options'
 
 
-const Cards = ({menuCards}) => {
+const Cards = ({
+    menuCards,
+    addPledge,
+    showMenuPledges
+}) => {
 
-    const [cards, setCards] = useState([
-        {
-        title:"Pledge with no reward",
-        description:"Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."
-        },
-        {
-         title:"Bamboo Stand",
-         subtitle:"Pledge $25 or more",
-         description:"You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
-         amount:101  
-        },
-        {
-            title:"Black Edition Stand",
-            subtitle:"Pledge $75 or more",
-            description:"You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
-            amount:64  
-        },
-        {
-            title:"Mahogany Special Edition",
-            subtitle:"Pledge $200 or more",
-            description:"You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
-            amount:0  
-        }
-    ])
+    const [cards, setCards] = useState(options)
 
+    const [activePledge, setActivePledge] = useState(null)
+    
     const filteredCards = cards.filter(card => 
         card.subtitle
     )
@@ -37,11 +21,16 @@ const Cards = ({menuCards}) => {
     <>
         {menuCards ? (
             <>
-                {cards.map(card => (
+                {cards.map((card, index) => (
                         <Card
+                        key={card.title}
                         card={card}
+                        index={index}
                         menuCards={menuCards}
                         type={card.amount === 0 ? 'no-stock' : ''}
+                        activePledge={activePledge}
+                        setActivePledge={setActivePledge}
+                        addPledge={addPledge}                 
                         />
                 ))}
 
@@ -51,9 +40,11 @@ const Cards = ({menuCards}) => {
                 {
                 filteredCards.map(card => (
                     <Card
+                    key={card.title}
                     card={card}
                     menuCards={menuCards}
                     type={card.amount === 0 ? 'no-stock' : ''}
+                    showMenuPledges={showMenuPledges}
                     />
                 ))}
             </>

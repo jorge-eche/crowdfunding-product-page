@@ -2,7 +2,10 @@ import Cards from './Cards'
 import './About.css'
 
 
-const About = ({menuCards}) => {
+const About = ({
+  menuCards,
+  showMenuPledges
+}) => {
   return (
     <div className="container">
         <p id="title">About this project</p>
@@ -13,6 +16,7 @@ const About = ({menuCards}) => {
   to allow notepads, pens, and USB sticks to be stored under the stand.</p>
         <Cards
         menuCards={menuCards}
+        showMenuPledges={showMenuPledges}
         />
     </div>
   )

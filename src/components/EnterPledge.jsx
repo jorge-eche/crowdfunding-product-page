@@ -1,21 +1,62 @@
-import './EnterPledge.css'
+import { useState, useEffect } from "react";
+import "./EnterPledge.css";
 
-const EnterPledge = () => {
-  return (
-    <div id='enter-pledge'>
+const EnterPledge = ({ 
+  card, 
+  activePledge, 
+  index,
+  addPledge
+ }) => {
 
-        <p>Enter your pledge</p>
+  const [price, setPrice] = useState(0) 
 
-        <div id='flex2'>
-            <div>
-                <span>$</span>
-                <input type="number" />
-            </div>
-            <input type='submit' value='Continue'/>
-        </div>
-
-  </div>
-  )
+  useEffect(() => {
+    if (activePledge === index) {
+        setPrice(card.pledge)
+    }
+  }, [activePledge])
+  
+const enforceMin = ()=> {
+  if (price < card.pledge) {
+    setPrice(card.pledge)
+  }
 }
 
-export default EnterPledge
+const handleSubmit = e => {
+  e.preventDefault()
+  console.log('submiting')
+  addPledge(price)
+}
+
+  return (
+    activePledge === index && (
+      <div id="enter-pledge">
+          <form 
+          id="form-enter-pledge" 
+          onSubmit={handleSubmit}
+          >
+            <p>Enter your pledge</p>
+            
+            <div id="flex-input-button">
+              <div
+              id="div-input-pledge">
+                
+                <span>$</span>                
+                <input 
+                type="number" 
+                value={price} 
+                min={card.pledge}
+                onChange={e => setPrice(e.target.value)}
+                onKeyUp={enforceMin}
+                />
+              </div>             
+
+              <input type="submit" value="Continue" />
+            </div>
+          </form>          
+      </div>
+    )
+  );
+};
+
+export default EnterPledge;

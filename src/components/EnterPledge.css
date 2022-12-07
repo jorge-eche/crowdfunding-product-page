@@ -1,5 +1,87 @@
 #enter-pledge {
-    display: none;
     width: 100%;
-    border-top: 1.5px solid rgba(192,192,192, .4);
+    border-top: 1.5px solid var(--opac-borders);
+}
+
+#form-enter-pledge {
+    margin-bottom: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#form-enter-pledge p {
+    text-align: center;
+    margin-top: 1.8rem;
+    flex-basis: 100%;
+}
+
+#flex-input-button {
+    margin-top: 1rem;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#div-input-pledge {
+    border: 1.5px solid var(--opac-borders);
+    border-radius: 2rem;
+    width: 30%;
+    min-width: 6rem;
+    padding: 1rem;
+    max-width: 11rem;
+    max-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+
+#div-input-pledge span {
+    color: var(--dark-gray);
+    opacity: .5;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+#div-input-pledge input {
+    width: 2.5rem;  
+    border: none;
+    font-size: .9rem;
+    font-weight: 900;
+}
+
+#form-enter-pledge input[type="submit"] {
+    width: 40%;
+    min-width: 9rem;
+    padding: 1rem;
+    color: rgba(255,255,255, .9);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    background-color: var(--moderate-cyan);
+    border:none ;
+    border-radius: 2rem;
+    transition: background-color .3s ease;
+}
+
+@media (min-width: 660px) {
+    #form-enter-pledge {
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        margin: 1rem 2rem 1rem ;
+    }
+
+    #form-enter-pledge p {
+        margin-top: 0rem;
+        flex-basis: auto;
+    }
+
+    #flex-input-button {
+        flex-basis: auto;
+        gap: 1rem;        
+    }
+
 }
