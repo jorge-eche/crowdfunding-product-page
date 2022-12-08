@@ -24,7 +24,6 @@ const enforceMin = ()=> {
 
 const handleSubmit = e => {
   e.preventDefault()
-  console.log('submiting')
   addPledge(price)
 }
 
@@ -48,6 +47,7 @@ const handleSubmit = e => {
                 min={card.pledge}
                 onChange={e => setPrice(e.target.value)}
                 onKeyUp={enforceMin}
+                autoFocus
                 />
               </div>             
 

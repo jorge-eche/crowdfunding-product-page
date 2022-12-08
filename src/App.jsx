@@ -32,6 +32,7 @@ function App() {
   }
 
   const showMenuPledges = ()=> {
+    setMenuHeader(false)
     setModal(true)
     setTimeout(() => {
       setMenuCards(true)
@@ -47,11 +48,14 @@ function App() {
 
 
 
+
+
   return (
     <div className={ modal ? 'fix' : ''}>
       <Header
       menuHeader={menuHeader}
       showMenuHeader={showMenuHeader}
+      showMenuPledges={showMenuPledges}
       />
       <BackThisProject
       showMenuPledges={showMenuPledges}
@@ -73,7 +77,9 @@ function App() {
       menuCards={menuCards}
       setMenuCards={setMenuCards}
       addPledge={addPledge}
-      isThankYou={isThankYou}      
+      isThankYou={isThankYou} 
+      setIsThankYou={setIsThankYou} 
+      showMenuPledges={showMenuPledges}    
       />
       )}      
       

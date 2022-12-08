@@ -6,7 +6,8 @@ const MenuHeader = ({
   setModal,
   setMenuHeader,
   setMenuCards,
-  hideModal
+  hideModal,
+  showMenuPledges
 }) => {
   return (
     <>
@@ -24,7 +25,12 @@ const MenuHeader = ({
         <ul>
           <li className="menu-item"><span>About</span></li>
           <li className="menu-item"><span>Discover</span></li>
-          <li className="menu-item"><span>Get Started</span></li>
+          <li
+          className="menu-item" 
+          onClick={showMenuPledges}
+          >
+            <span>Get Started</span>
+          </li>
         </ul>
       </nav>   
     </>

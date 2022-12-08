@@ -10,12 +10,15 @@ const Modal = ({
     menuCards,
     setMenuCards,
     addPledge,
-    isThankYou
+    isThankYou,
+    setIsThankYou,
+    showMenuPledges
 }) => {
 
   const hideModal = ()=> {
     setMenuCards(false)
     setMenuHeader(false)
+    setIsThankYou(false)
 
     setTimeout(() => {
       setModal(false)      
@@ -30,6 +33,7 @@ const Modal = ({
        setMenuHeader={setMenuHeader}
        setMenuCards={setMenuCards}
        hideModal={hideModal}
+       showMenuPledges={showMenuPledges}
        />}
 
        {menuCards && 
@@ -43,7 +47,9 @@ const Modal = ({
        />}
 
        {isThankYou &&
-       <ThankYou/>
+       <ThankYou
+       hideModal={hideModal}
+       />
        }
 
     </div>

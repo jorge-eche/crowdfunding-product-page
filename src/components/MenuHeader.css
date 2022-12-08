@@ -34,6 +34,11 @@
     align-items: center;
 }
 
+.menu-item:hover {
+    cursor: pointer;
+}
+
 .menu-item:last-child {
     border-bottom: none;
 }
+

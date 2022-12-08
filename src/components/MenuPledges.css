@@ -3,7 +3,6 @@
     transform: none;    
     margin-top: 8rem;
     opacity: 0;
-    transition: all 2s linear 1s;
 }
 
 .container.container-modal-cards.animate-menu-pledge {

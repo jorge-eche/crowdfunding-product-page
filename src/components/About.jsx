@@ -4,8 +4,9 @@ import './About.css'
 
 const About = ({
   menuCards,
-  showMenuPledges
+  showMenuPledges,
 }) => {
+
   return (
     <div className="container">
         <p id="title">About this project</p>

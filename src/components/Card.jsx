@@ -15,8 +15,6 @@ const Card = ({
   
   const { title, subtitle, description, amount } = card
 
-
-
   const handleOnClick = () => {
     setActivePledge(index)
   }

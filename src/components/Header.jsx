@@ -4,7 +4,8 @@ import HamburgerIcon from '../img/icon-hamburger.svg'
 
 const Header = ({
   menuHeader,
-  showMenuHeader
+  showMenuHeader,
+  showMenuPledges
 }) => {
   return (
     <header className="header">
@@ -26,7 +27,7 @@ const Header = ({
         <ul>
           <li>About</li>
           <li>Discover</li>
-          <li>Get Started</li>
+          <li onClick={showMenuPledges}>Get Started</li>
         </ul>
       </nav>
     </header>
