@@ -13,4 +13,6 @@ export const formatCurrency = currency => {
     });
   };
 
+  export const roundNumber = number => Math.round(number*10)/10
+
   

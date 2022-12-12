@@ -1,14 +1,11 @@
 import Cards from "./Cards"
 import './MenuPledges.css'
-import CloseMenuPledges from '../img/icon-close-modal.svg'
 
 const MenuPledges = ({
-  setModal,
-  setMenuHeader,
   menuCards,
-  setMenuCards,
   addPledge,
-  hideModal
+  hideModal,
+  options
 }) => {
 
   return (
@@ -33,6 +30,7 @@ const MenuPledges = ({
       <Cards
       menuCards={menuCards}
       addPledge={addPledge}
+      options={options}
       />
 
     </div>

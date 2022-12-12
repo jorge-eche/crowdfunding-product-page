@@ -1,34 +1,65 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Header from './components/Header'
 import BackThisProject from './components/BackThisProject'
 import Stats from './components/Stats'
 import About from './components/About'
 import Modal from './components/Modal'
+import {options} from './data/options'
 
 function App() {
 
-  const [funds, setFunds] = useState(89914)
-  const [backers, setBackers] = useState(5007)
+  const [ funds, setFunds ] = useState(89914)
+  const [ backers, setBackers ] = useState(5007)
 
-  const [modal, setModal] = useState(false)
+  const [ modal, setModal ] = useState(false)
                                                                                                              
-  const [menuHeader, setMenuHeader] = useState(false)
-  const [menuCards, setMenuCards] = useState(false)
+  const [ menuHeader, setMenuHeader ] = useState(false)
+
+  const [ menuCards, setMenuCards ] = useState(false)
+
   const [ isThankYou, setIsThankYou ] = useState(false)
+
+  const [ isBookmark, setIsBookmark ] = useState(false)
+
+  useEffect(() => {
+    const fundsLS = JSON.parse(localStorage.getItem('funds'));
+
+    if ( fundsLS !== null ) setFunds(fundsLS);
+  }, []);
+
+  useEffect(() => {
+    const backersLS = JSON.parse(localStorage.getItem('backers'));
+    if (backersLS) setBackers(backersLS);
+  }, []);
+
+  useEffect(() => {
+    if (funds !== 89914)
+    localStorage.setItem('funds', JSON.stringify(funds));
+  }, [funds]);
+
+  useEffect(() => {
+    if (backers !== 5007)
+    localStorage.setItem('backers', JSON.stringify(backers));
+  }, [backers]);
 
   const addPledge = (money)=> {
     const question = confirm(`Do you want to pledge for $${money}?`)
     if (question) {
+      //Updates fund state
       const updateFunds = funds + Number(money)
       setFunds(updateFunds)
 
+      //Updates backers state
       const updateBackers = backers + 1
       setBackers(updateBackers)
 
-      setMenuCards(false)
-      setIsThankYou(true)
-    }
+      //Updates amount in Card component
 
+
+      //Shows ThankYou Component
+      showThankYou()
+
+    }
   }
 
   const showMenuPledges = ()=> {
@@ -46,9 +77,20 @@ function App() {
     }, 500);
   }
 
+  const showBookmarkAlert = () => {
+    setModal(true)
+    setTimeout(() => {
+      setIsBookmark(true)
+    }, 500);
 
+  }
 
-
+  const showThankYou = () => {
+    setMenuCards(false)
+    setTimeout(() => {
+      setIsThankYou(true)
+    }, 500);
+  }
 
   return (
     <div className={ modal ? 'fix' : ''}>
@@ -59,6 +101,7 @@ function App() {
       />
       <BackThisProject
       showMenuPledges={showMenuPledges}
+      showBookmarkAlert={showBookmarkAlert}
       />
       <Stats
       funds= {funds}
@@ -67,6 +110,7 @@ function App() {
       <About
       menuCards={menuCards}
       showMenuPledges={showMenuPledges}
+      options={options}
       />
 
       {modal && (
@@ -79,7 +123,10 @@ function App() {
       addPledge={addPledge}
       isThankYou={isThankYou} 
       setIsThankYou={setIsThankYou} 
-      showMenuPledges={showMenuPledges}    
+      showMenuPledges={showMenuPledges}  
+      isBookmark={isBookmark}
+      setIsBookmark={setIsBookmark}
+      options={options}  
       />
       )}      
       

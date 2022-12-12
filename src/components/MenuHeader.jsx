@@ -4,11 +4,17 @@ import CloseMenu from '../img/icon-close-menu.svg'
 
 const MenuHeader = ({
   setModal,
-  setMenuHeader,
-  setMenuCards,
   hideModal,
-  showMenuPledges
+  showMenuPledges,
+  setMenuHeader
 }) => {
+
+
+  const goToAbout = ()=> {
+      setModal(false)
+      setMenuHeader(false)     
+  } 
+
   return (
     <>
         <div className='menu-icons'>
@@ -23,14 +29,26 @@ const MenuHeader = ({
 
       <nav className='container container-menu'>
         <ul>
-          <li className="menu-item"><span>About</span></li>
-          <li className="menu-item"><span>Discover</span></li>
-          <li
-          className="menu-item" 
-          onClick={showMenuPledges}
-          >
-            <span>Get Started</span>
-          </li>
+          <a href='#title' onClick={goToAbout}>
+            <li className="menu-item" >
+              <span>About</span>
+            </li>
+          </a>
+
+          <a>
+            <li className="menu-item">
+              <span>Discover</span>
+            </li>
+          </a>
+
+          <a>
+            <li
+            className="menu-item" 
+            onClick={showMenuPledges}
+            >
+              <span>Get Started</span>
+            </li>
+          </a>           
         </ul>
       </nav>   
     </>

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Card.css'
 import EnterPledge from './EnterPledge.jsx'
 
@@ -13,7 +14,9 @@ const Card = ({
   showMenuPledges
 }) => {
   
-  const { title, subtitle, description, amount } = card
+  const [ cardAmount, setCardAmount ] = useState(card.amount)
+
+  const { title, subtitle, description } = card
 
   const handleOnClick = () => {
     setActivePledge(index)
@@ -48,14 +51,14 @@ const Card = ({
       <div id={!menuCards ? "flex2" : undefined} className={menuCards ? 'move-numbers' : undefined}>
 
         <div id='flex1'>
-          <p className={`num-left ${menuCards ? 'num-left-modal' : '' }`}>{amount}</p>
+          <p className={`num-left ${menuCards ? 'num-left-modal' : '' }`}>{cardAmount}</p>
           {subtitle && <p>left</p>}
         </div>
 
-        {!menuCards && <button onClick={showMenuPledges}>Select Reward</button>}
+        {!menuCards && <button onClick={cardAmount !== 0 ? showMenuPledges : undefined}>Select Reward</button>}
       </div>  
     </div>
-      {menuCards && amount > 0 || menuCards && !subtitle ? (
+      {menuCards && cardAmount > 0 || menuCards && !subtitle ? (
         <EnterPledge
         card={card}
         activePledge={activePledge}
@@ -66,8 +69,6 @@ const Card = ({
       ) : ''} 
       
   </div>
-
-
   )}
 
 export default Card

@@ -1,3 +1,13 @@
+ul a {
+    text-decoration: none;
+}
+
+ul a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .header {
     height: 22rem;
     background-image: url(../img/image-hero-mobile.jpg);

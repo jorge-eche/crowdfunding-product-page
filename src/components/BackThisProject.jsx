@@ -1,7 +1,11 @@
 import "./BackThisProject.css";
 import MastercraftLogo from "../img/logo-mastercraft.svg";
 
-const BackThisProject = ({showMenuPledges}) => {
+const BackThisProject = ({
+  showMenuPledges,
+  showBookmarkAlert
+}) => {
+
   return (
     <div className="container">
       <div id="mastercraft-logo">
@@ -17,20 +21,20 @@ const BackThisProject = ({showMenuPledges}) => {
         >
           Back this project
         </button>
-        <div className="flex-wrapper-bookmark">
-          <svg
-            className="svg"
-            xmlns="http://www.w3.org/2000/svg"
-            width="56"
-            height="56"
-          >
-            <g fill="none" fillRule="evenodd">
-              <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
-              <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
-            </g>
-          </svg>
-          <button id="bookmark">Bookmark</button>
-        </div>
+        <label htmlFor="bookmark" className="flex-wrapper-bookmark">
+            <svg
+              className="svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+            >
+              <g fill="none" fillRule="evenodd">
+                <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+                <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+              </g>
+            </svg>
+            <button id="bookmark" onClick={showBookmarkAlert}>Bookmark</button>
+        </label>
       </div>
     </div>
   );

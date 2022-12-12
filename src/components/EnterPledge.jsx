@@ -16,16 +16,16 @@ const EnterPledge = ({
     }
   }, [activePledge])
   
-const enforceMin = ()=> {
-  if (price < card.pledge) {
-    setPrice(card.pledge)
+  const enforceMin = ()=> {
+    if (price < card.pledge) {
+      setPrice(card.pledge)
+    }
   }
-}
 
-const handleSubmit = e => {
-  e.preventDefault()
-  addPledge(price)
-}
+  const handleSubmit = e => {
+    e.preventDefault()
+    addPledge(price)
+  }
 
   return (
     activePledge === index && (

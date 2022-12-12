@@ -28,7 +28,7 @@ const Stats = ({
           </div>
         </div>
 
-        <ProgressBar/>
+        <ProgressBar funds={funds}/>
     </div>
   )
 }

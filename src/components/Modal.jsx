@@ -1,6 +1,7 @@
 import MenuHeader from "./MenuHeader"
 import MenuPledges from "./MenuPledges"
 import ThankYou from "./ThankYou"
+import BookmarkModal from "./BookmarkModal"
 import './Modal.css'
 
 const Modal = ({
@@ -12,45 +13,44 @@ const Modal = ({
     addPledge,
     isThankYou,
     setIsThankYou,
-    showMenuPledges
+    showMenuPledges,
+    isBookmark,
+    setIsBookmark,
+    options
 }) => {
 
   const hideModal = ()=> {
     setMenuCards(false)
     setMenuHeader(false)
     setIsThankYou(false)
+    setIsBookmark(false)
 
     setTimeout(() => {
       setModal(false)      
     }, 500);
   }
 
-  return (
+    return (
     <div className="modal">
        {menuHeader && 
        <MenuHeader
        setModal={setModal}
-       setMenuHeader={setMenuHeader}
-       setMenuCards={setMenuCards}
        hideModal={hideModal}
        showMenuPledges={showMenuPledges}
+       setMenuHeader={setMenuHeader}
        />}
 
        {menuCards && 
        <MenuPledges 
-        setModal={setModal}
-        setMenuHeader={setMenuHeader}
         menuCards={menuCards}
-        setMenuCards={setMenuCards}
         addPledge={addPledge}
         hideModal={hideModal}
+        options={options}
        />}
 
-       {isThankYou &&
-       <ThankYou
-       hideModal={hideModal}
-       />
-       }
+       {isThankYou && <ThankYou hideModal={hideModal}/>}
+
+       {isBookmark && <BookmarkModal hideModal={hideModal}/>}
 
     </div>
   )

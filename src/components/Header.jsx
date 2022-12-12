@@ -7,6 +7,7 @@ const Header = ({
   showMenuHeader,
   showMenuPledges
 }) => {
+  
   return (
     <header className="header">
 
@@ -25,9 +26,10 @@ const Header = ({
 
       <nav className='nav-bar-header'>
         <ul>
-          <li>About</li>
-          <li>Discover</li>
-          <li onClick={showMenuPledges}>Get Started</li>
+          <a href="#title"><li>About</li></a> 
+          <a href=""><li>Discover</li></a>      
+          <a ><li onClick={showMenuPledges}>Get Started</li></a>         
+                   
         </ul>
       </nav>
     </header>
