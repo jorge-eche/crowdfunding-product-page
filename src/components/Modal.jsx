@@ -16,7 +16,7 @@ const Modal = ({
     showMenuPledges,
     isBookmark,
     setIsBookmark,
-    options
+    showThankYou
 }) => {
 
   const hideModal = ()=> {
@@ -45,7 +45,7 @@ const Modal = ({
         menuCards={menuCards}
         addPledge={addPledge}
         hideModal={hideModal}
-        options={options}
+        showThankYou={showThankYou}
        />}
 
        {isThankYou && <ThankYou hideModal={hideModal}/>}

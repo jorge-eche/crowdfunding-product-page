@@ -5,7 +5,9 @@ const EnterPledge = ({
   card, 
   activePledge, 
   index,
-  addPledge
+  addPledge,
+  substractAmount,
+  showThankYou,
  }) => {
 
   const [price, setPrice] = useState(0) 
@@ -24,7 +26,15 @@ const EnterPledge = ({
 
   const handleSubmit = e => {
     e.preventDefault()
-    addPledge(price)
+
+    const question = confirm(`Do you want to pledge for $${price}?`)
+    if (question) {
+      addPledge(price)
+
+      substractAmount()
+
+      showThankYou()
+    }
   }
 
   return (

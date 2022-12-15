@@ -5,7 +5,7 @@ const MenuPledges = ({
   menuCards,
   addPledge,
   hideModal,
-  options
+  showThankYou
 }) => {
 
   return (
@@ -30,7 +30,7 @@ const MenuPledges = ({
       <Cards
       menuCards={menuCards}
       addPledge={addPledge}
-      options={options}
+      showThankYou={showThankYou}
       />
 
     </div>

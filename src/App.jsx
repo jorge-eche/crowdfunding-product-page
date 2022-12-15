@@ -4,7 +4,6 @@ import BackThisProject from './components/BackThisProject'
 import Stats from './components/Stats'
 import About from './components/About'
 import Modal from './components/Modal'
-import {options} from './data/options'
 
 function App() {
 
@@ -43,8 +42,6 @@ function App() {
   }, [backers]);
 
   const addPledge = (money)=> {
-    const question = confirm(`Do you want to pledge for $${money}?`)
-    if (question) {
       //Updates fund state
       const updateFunds = funds + Number(money)
       setFunds(updateFunds)
@@ -52,14 +49,6 @@ function App() {
       //Updates backers state
       const updateBackers = backers + 1
       setBackers(updateBackers)
-
-      //Updates amount in Card component
-
-
-      //Shows ThankYou Component
-      showThankYou()
-
-    }
   }
 
   const showMenuPledges = ()=> {
@@ -82,7 +71,6 @@ function App() {
     setTimeout(() => {
       setIsBookmark(true)
     }, 500);
-
   }
 
   const showThankYou = () => {
@@ -110,7 +98,7 @@ function App() {
       <About
       menuCards={menuCards}
       showMenuPledges={showMenuPledges}
-      options={options}
+      showThankYou={showThankYou}
       />
 
       {modal && (
@@ -126,7 +114,7 @@ function App() {
       showMenuPledges={showMenuPledges}  
       isBookmark={isBookmark}
       setIsBookmark={setIsBookmark}
-      options={options}  
+      showThankYou={showThankYou}
       />
       )}      
       

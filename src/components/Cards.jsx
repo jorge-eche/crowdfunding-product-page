@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Card from './Card.jsx'
+import {options} from '../data/options'
 
 const Cards = ({
     menuCards,
     addPledge,
     showMenuPledges,
-    options,
+    showThankYou
 }) => {
 
     const [cards, setCards] = useState(options)
@@ -15,6 +16,7 @@ const Cards = ({
     const filteredCards = cards.filter(card => 
         card.subtitle
     )
+    
 
   return (
     <>
@@ -29,7 +31,8 @@ const Cards = ({
                         type={card.amount === 0 ? 'no-stock' : ''}
                         activePledge={activePledge}
                         setActivePledge={setActivePledge}
-                        addPledge={addPledge}               
+                        addPledge={addPledge}
+                        showThankYou={showThankYou}               
                         />
                 ))}
 
@@ -42,8 +45,8 @@ const Cards = ({
                     key={card.title}
                     card={card}
                     menuCards={menuCards}
-                    type={card.amount === 0 ? 'no-stock' : ''}
                     showMenuPledges={showMenuPledges}
+                    showThankYou={showThankYou}
                     />
                 ))}
             </>

@@ -5,7 +5,7 @@ import './About.css'
 const About = ({
   menuCards,
   showMenuPledges,
-  options
+  showThankYou
 }) => {
 
   return (
@@ -19,7 +19,7 @@ const About = ({
         <Cards
         menuCards={menuCards}
         showMenuPledges={showMenuPledges}
-        options={options}
+        showThankYou={showThankYou}
         />
     </div>
   )
