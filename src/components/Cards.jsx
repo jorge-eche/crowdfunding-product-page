@@ -32,7 +32,9 @@ const Cards = ({
                         activePledge={activePledge}
                         setActivePledge={setActivePledge}
                         addPledge={addPledge}
-                        showThankYou={showThankYou}               
+                        showThankYou={showThankYou}  
+                        cards={cards}
+                        setCards={setCards}          
                         />
                 ))}
 

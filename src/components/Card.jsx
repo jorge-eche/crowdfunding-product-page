@@ -11,12 +11,12 @@ const Card = ({
   setActivePledge,
   addPledge,
   showMenuPledges,
-  showThankYou
+  showThankYou,
+  cards,
+  setCards
 }) => {
   
-  const [ cardAmount, setCardAmount ] = useState(card.amount)
-
-  const { title, subtitle, description } = card
+  const { title, subtitle, description, amount } = card
 
 
   // useEffect(() => {
@@ -34,9 +34,18 @@ const Card = ({
     setActivePledge(index)
   }
 
-  const substractAmount = ()=> {
-    const updateAmount = cardAmount - 1
-    setCardAmount(updateAmount)
+  const updatePledges  = ()=> {
+    if (card.amount) {
+      const cardClone = JSON.parse(JSON.stringify(card))
+      cardClone.amount -= 1
+  
+      const updatedList = cards.map(item=> 
+        item.title === cardClone.title ? cardClone : item
+      )
+      setCards(updatedList)
+    }
+
+
   }
   
   return (
@@ -44,7 +53,7 @@ const Card = ({
     className={
       `card-style 
       ${menuCards ? 'card-style-modal' : undefined}
-      ${cardAmount === 0 ? 'no-stock' : ''}`
+      ${amount === 0 ? 'no-stock' : ''}`
       } 
     tabIndex='1'
     onClick={menuCards ? handleOnClick : undefined}
@@ -69,22 +78,22 @@ const Card = ({
         <div id={!menuCards ? "flex2" : undefined} className={menuCards ? 'move-numbers' : undefined}>
 
           <div id='flex1'>
-            <p className={`num-left ${menuCards ? 'num-left-modal' : '' }`}>{cardAmount}</p>
+            <p className={`num-left ${menuCards ? 'num-left-modal' : '' }`}>{amount}</p>
             
             {subtitle && <p>left</p>}
           </div>
 
-          {!menuCards && <button onClick={cardAmount !== 0 ? showMenuPledges : undefined}>Select Reward</button>}
+          {!menuCards && <button onClick={amount !== 0 ? showMenuPledges : undefined}>Select Reward</button>}
         </div>  
       </div>
-        {menuCards && cardAmount > 0 || menuCards && !subtitle ? (
+        {menuCards && amount > 0 || menuCards && !subtitle ? (
           <EnterPledge
           card={card}
           activePledge={activePledge}
           index={index}
           addPledge={addPledge}
-          substractAmount={substractAmount}
           showThankYou={showThankYou}
+          updatePledges={updatePledges}
           />
 
         ) : ''} 

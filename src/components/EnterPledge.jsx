@@ -6,8 +6,8 @@ const EnterPledge = ({
   activePledge, 
   index,
   addPledge,
-  substractAmount,
   showThankYou,
+  updatePledges
  }) => {
 
   const [price, setPrice] = useState(0) 
@@ -31,7 +31,7 @@ const EnterPledge = ({
     if (question) {
       addPledge(price)
 
-      substractAmount()
+      updatePledges()
 
       showThankYou()
     }
