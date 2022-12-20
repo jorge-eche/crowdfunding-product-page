@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
-import './Card.css'
-import EnterPledge from './EnterPledge.jsx'
-
+import './Card.css';
+import EnterPledge from './EnterPledge.jsx';
 
 const Card = ({
   card,
@@ -13,92 +11,85 @@ const Card = ({
   showMenuPledges,
   showThankYou,
   cards,
-  setCards
+  setCards,
 }) => {
-  
-  const { title, subtitle, description, amount } = card
-
-
-  // useEffect(() => {
-  //   const cardAmountSL = JSON.parse(localStorage.getItem('cardAmount'));
-  //   if (cardAmountSL) setCardAmount(cardAmountSL);
-  // }, []);
-
-  // useEffect(() => {
-  //   if (cardAmount !== card.amount)
-  //   localStorage.setItem('cardAmount', JSON.stringify(cardAmount));
-  // }, [cardAmount]);
-  
-    
+  const { title, subtitle, description, amount } = card;
   const handleOnClick = () => {
-    setActivePledge(index)
-  }
+    setActivePledge(index);
+  };
 
-  const updatePledges  = ()=> {
+  const updatePledges = () => {
     if (card.amount) {
-      const cardClone = JSON.parse(JSON.stringify(card))
-      cardClone.amount -= 1
-  
-      const updatedList = cards.map(item=> 
+      const cardClone = { ...card, amount: card.amount - 1 };
+
+      const updatedList = cards.map((item) =>
         item.title === cardClone.title ? cardClone : item
-      )
-      setCards(updatedList)
+      );
+      setCards(updatedList);
     }
+  };
 
-
-  }
-  
   return (
-    <div 
-    className={
-      `card-style 
+    <div
+      className={`card-style 
       ${menuCards ? 'card-style-modal' : undefined}
-      ${amount === 0 ? 'no-stock' : ''}`
-      } 
-    tabIndex='1'
-    onClick={menuCards ? handleOnClick : undefined}
+      ${amount === 0 ? 'no-stock' : ''}`}
+      tabIndex="1"
+      onClick={menuCards ? handleOnClick : undefined}
     >
-      <div id='card-margin'>
-        <div className='flex-row'>
-
-            {menuCards && 
-            <div id='ball'>
+      <div id="card-margin">
+        <div className="flex-row">
+          {menuCards && (
+            <div id="ball">
               <div id="green-ball"></div>
             </div>
-            }
+          )}
 
-            <div className={`card-title ${menuCards ? 'card-title-modal' : undefined}`}>
-              <h1>{title}</h1>
-              <h2>{subtitle}</h2>
-            </div>          
+          <div
+            className={`card-title ${
+              menuCards ? 'card-title-modal' : undefined
+            }`}
+          >
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+          </div>
         </div>
 
-        <p className='pledge-description'>{description}</p>
+        <p className="pledge-description">{description}</p>
 
-        <div id={!menuCards ? "flex2" : undefined} className={menuCards ? 'move-numbers' : undefined}>
+        <div
+          id={!menuCards ? 'flex2' : undefined}
+          className={menuCards ? 'move-numbers' : undefined}
+        >
+          <div id="flex1">
+            <p className={`num-left ${menuCards ? 'num-left-modal' : ''}`}>
+              {amount}
+            </p>
 
-          <div id='flex1'>
-            <p className={`num-left ${menuCards ? 'num-left-modal' : '' }`}>{amount}</p>
-            
             {subtitle && <p>left</p>}
           </div>
 
-          {!menuCards && <button onClick={amount !== 0 ? showMenuPledges : undefined}>Select Reward</button>}
-        </div>  
+          {!menuCards && (
+            <button onClick={amount !== 0 ? showMenuPledges : undefined}>
+              Select Reward
+            </button>
+          )}
+        </div>
       </div>
-        {menuCards && amount > 0 || menuCards && !subtitle ? (
-          <EnterPledge
+      {(menuCards && amount > 0) || (menuCards && !subtitle) ? (
+        <EnterPledge
           card={card}
           activePledge={activePledge}
           index={index}
           addPledge={addPledge}
           showThankYou={showThankYou}
           updatePledges={updatePledges}
-          />
-
-        ) : ''} 
-        
+        />
+      ) : (
+        ''
+      )}
     </div>
-  )}
+  );
+};
 
-export default Card
+export default Card;

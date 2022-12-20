@@ -5,55 +5,59 @@ import BookmarkModal from "./BookmarkModal"
 import './Modal.css'
 
 const Modal = ({
-    setModal,
-    menuHeader,
-    setMenuHeader,
-    menuCards,
-    setMenuCards,
-    addPledge,
-    isThankYou,
-    setIsThankYou,
-    showMenuPledges,
-    isBookmark,
-    setIsBookmark,
-    showThankYou
+  setModal,
+  menuHeader,
+  setMenuHeader,
+  menuCards,
+  setMenuCards,
+  addPledge,
+  isThankYou,
+  setIsThankYou,
+  showMenuPledges,
+  isBookmark,
+  setIsBookmark,
+  showThankYou,
+  cards,
+  setCards,
 }) => {
-
-  const hideModal = ()=> {
-    setMenuCards(false)
-    setMenuHeader(false)
-    setIsThankYou(false)
-    setIsBookmark(false)
+  const hideModal = () => {
+    setMenuCards(false);
+    setMenuHeader(false);
+    setIsThankYou(false);
+    setIsBookmark(false);
 
     setTimeout(() => {
-      setModal(false)      
+      setModal(false);
     }, 500);
-  }
+  };
 
-    return (
+  return (
     <div className="modal">
-       {menuHeader && 
-       <MenuHeader
-       setModal={setModal}
-       hideModal={hideModal}
-       showMenuPledges={showMenuPledges}
-       setMenuHeader={setMenuHeader}
-       />}
+      {menuHeader && (
+        <MenuHeader
+          setModal={setModal}
+          hideModal={hideModal}
+          showMenuPledges={showMenuPledges}
+          setMenuHeader={setMenuHeader}
+        />
+      )}
 
-       {menuCards && 
-       <MenuPledges 
-        menuCards={menuCards}
-        addPledge={addPledge}
-        hideModal={hideModal}
-        showThankYou={showThankYou}
-       />}
+      {menuCards && (
+        <MenuPledges
+          menuCards={menuCards}
+          addPledge={addPledge}
+          hideModal={hideModal}
+          showThankYou={showThankYou}
+          cards={cards}
+          setCards={setCards}
+        />
+      )}
 
-       {isThankYou && <ThankYou hideModal={hideModal}/>}
+      {isThankYou && <ThankYou hideModal={hideModal} />}
 
-       {isBookmark && <BookmarkModal hideModal={hideModal}/>}
-
+      {isBookmark && <BookmarkModal hideModal={hideModal} />}
     </div>
-  )
-}
+  );
+};
 
 export default Modal

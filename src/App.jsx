@@ -5,121 +5,118 @@ import Stats from './components/Stats'
 import About from './components/About'
 import Modal from './components/Modal'
 
+import { options } from './data/options';
+
 function App() {
+  const [funds, setFunds] = useState(JSON.parse(localStorage.getItem('funds')) ?? 89914);
+  const [backers, setBackers] = useState(JSON.parse(localStorage.getItem('backers')) ?? 5007);
+  const [cards, setCards] = useState(JSON.parse(localStorage.getItem('cards')) ?? options);
 
-  const [ funds, setFunds ] = useState(89914)
-  const [ backers, setBackers ] = useState(5007)
+  const [modal, setModal] = useState(false);
 
-  const [ modal, setModal ] = useState(false)
-                                                                                                             
-  const [ menuHeader, setMenuHeader ] = useState(false)
+  const [menuHeader, setMenuHeader] = useState(false);
 
-  const [ menuCards, setMenuCards ] = useState(false)
+  const [isBookmark, setIsBookmark] = useState(false);
+  
+  const [menuCards, setMenuCards] = useState(false);
+  const [isThankYou, setIsThankYou] = useState(false);
 
-  const [ isThankYou, setIsThankYou ] = useState(false)
 
-  const [ isBookmark, setIsBookmark ] = useState(false)
-
+//Persist funds, backers and cards (amount of the pledges) in Local Storage
   useEffect(() => {
-    const fundsLS = JSON.parse(localStorage.getItem('funds'));
-
-    if ( fundsLS !== null ) setFunds(fundsLS);
-  }, []);
-
-  useEffect(() => {
-    const backersLS = JSON.parse(localStorage.getItem('backers'));
-    if (backersLS) setBackers(backersLS);
-  }, []);
-
-  useEffect(() => {
-    if (funds !== 89914)
     localStorage.setItem('funds', JSON.stringify(funds));
   }, [funds]);
 
   useEffect(() => {
-    if (backers !== 5007)
+
     localStorage.setItem('backers', JSON.stringify(backers));
   }, [backers]);
 
-  const addPledge = (money)=> {
-      //Updates fund state
-      const updateFunds = funds + Number(money)
-      setFunds(updateFunds)
+  useEffect(() => {
+      localStorage.setItem('cards', JSON.stringify(cards));
+  }, [cards]);
 
-      //Updates backers state
-      const updateBackers = backers + 1
-      setBackers(updateBackers)
-  }
+  //Adds a pledge and updates fund and backers afterwards
+  const addPledge = (money) => {
+    //Updates fund state
+    const updateFunds = funds + Number(money);
+    setFunds(updateFunds);
 
-  const showMenuPledges = ()=> {
-    setMenuHeader(false)
-    setModal(true)
+    //Updates backers state
+    const updateBackers = backers + 1;
+    setBackers(updateBackers);
+  };
+
+  //Shows modal components
+  const showMenuPledges = () => {
+    setMenuHeader(false);
+    setModal(true);
     setTimeout(() => {
-      setMenuCards(true)
+      setMenuCards(true);
     }, 500);
-  }
+  };
 
-  const showMenuHeader = ()=> {
-    setModal(true)
+  const showMenuHeader = () => {
+    setModal(true);
     setTimeout(() => {
-      setMenuHeader(true)
+      setMenuHeader(true);
     }, 500);
-  }
+  };
 
   const showBookmarkAlert = () => {
-    setModal(true)
+    setModal(true);
     setTimeout(() => {
-      setIsBookmark(true)
+      setIsBookmark(true);
     }, 500);
-  }
+  };
 
   const showThankYou = () => {
-    setMenuCards(false)
+    setMenuCards(false);
     setTimeout(() => {
-      setIsThankYou(true)
+      setIsThankYou(true);
     }, 500);
-  }
+  };
 
   return (
-    <div className={ modal ? 'fix' : ''}>
+    <div className={modal ? 'fix' : ''}>
       <Header
-      menuHeader={menuHeader}
-      showMenuHeader={showMenuHeader}
-      showMenuPledges={showMenuPledges}
+        menuHeader={menuHeader}
+        showMenuHeader={showMenuHeader}
+        showMenuPledges={showMenuPledges}
       />
       <BackThisProject
-      showMenuPledges={showMenuPledges}
-      showBookmarkAlert={showBookmarkAlert}
+        showMenuPledges={showMenuPledges}
+        showBookmarkAlert={showBookmarkAlert}
       />
-      <Stats
-      funds= {funds}
-      backers = {backers}
-      />
+      <Stats funds={funds} backers={backers} />
       <About
-      menuCards={menuCards}
-      showMenuPledges={showMenuPledges}
-      showThankYou={showThankYou}
+        menuCards={menuCards}
+        showMenuPledges={showMenuPledges}
+        showThankYou={showThankYou}
+        cards={cards}
+        setCards={setCards}
       />
 
       {modal && (
-      <Modal
-      setModal={setModal}
-      menuHeader={menuHeader}
-      setMenuHeader={setMenuHeader}
-      menuCards={menuCards}
-      setMenuCards={setMenuCards}
-      addPledge={addPledge}
-      isThankYou={isThankYou} 
-      setIsThankYou={setIsThankYou} 
-      showMenuPledges={showMenuPledges}  
-      isBookmark={isBookmark}
-      setIsBookmark={setIsBookmark}
-      showThankYou={showThankYou}
-      />
-      )}      
-      
+        <Modal
+          setModal={setModal}
+          menuHeader={menuHeader}
+          setMenuHeader={setMenuHeader}
+          menuCards={menuCards}
+          setMenuCards={setMenuCards}
+          addPledge={addPledge}
+          isThankYou={isThankYou}
+          setIsThankYou={setIsThankYou}
+          showMenuPledges={showMenuPledges}
+          isBookmark={isBookmark}
+          setIsBookmark={setIsBookmark}
+          showThankYou={showThankYou}
+          cards={cards}
+          setCards={setCards}
+        />
+      )}
     </div>
-  )
+  );
 }
 
 export default App

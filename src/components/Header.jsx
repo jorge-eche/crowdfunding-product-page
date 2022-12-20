@@ -10,30 +10,33 @@ const Header = ({
   
   return (
     <header className="header">
-
       {!menuHeader && (
         <>
-          <div id='bar-crowfund'>
+          <div id="bar-crowfund">
             <img src={CrowfundIcon} alt="" />
           </div>
 
-          <div id='bar-hamburger' onClick={showMenuHeader} >
-            <img  src={HamburgerIcon} alt="" />
+          <div id="bar-hamburger" onClick={showMenuHeader}>
+            <img src={HamburgerIcon} alt="" />
           </div>
-        </> 
+        </>
       )}
-      
 
-      <nav className='nav-bar-header'>
+      <nav className="nav-bar-header">
         <ul>
-          <a href="#title"><li>About</li></a> 
-          <a href=""><li>Discover</li></a>      
-          <a ><li onClick={showMenuPledges}>Get Started</li></a>         
-                   
+          <li>
+            <a href="#title">About</a>
+          </li>
+          <li>
+            <a href="">Discover</a>
+          </li>
+          <li>
+            <a onClick={showMenuPledges}>Get Started</a>
+          </li>
         </ul>
       </nav>
     </header>
-  )
+  );
 
   
 }
