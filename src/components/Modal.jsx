@@ -19,6 +19,8 @@ const Modal = ({
   showThankYou,
   cards,
   setCards,
+  activePledge,
+  setActivePledge
 }) => {
   const hideModal = () => {
     setMenuCards(false);
@@ -50,6 +52,8 @@ const Modal = ({
           showThankYou={showThankYou}
           cards={cards}
           setCards={setCards}
+          activePledge={activePledge}
+          setActivePledge={setActivePledge}
         />
       )}
 

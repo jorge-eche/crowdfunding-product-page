@@ -8,12 +8,14 @@ const Card = ({
   activePledge,
   setActivePledge,
   addPledge,
-  showMenuPledges,
   showThankYou,
   cards,
   setCards,
+  showMenuPledges
 }) => {
+
   const { title, subtitle, description, amount } = card;
+  
   const handleOnClick = () => {
     setActivePledge(index);
   };
@@ -29,13 +31,19 @@ const Card = ({
     }
   };
 
+  const openMenuPledges = () => {
+    setActivePledge(index + 1);
+    showMenuPledges()
+
+  };
+
   return (
     <div
       className={`card-style 
       ${menuCards ? 'card-style-modal' : undefined}
       ${amount === 0 ? 'no-stock' : ''}`}
       tabIndex="1"
-      onClick={menuCards ? handleOnClick : undefined}
+      onClick={menuCards ? handleOnClick : undefined}   
     >
       <div id="card-margin">
         <div className="flex-row">
@@ -70,7 +78,7 @@ const Card = ({
           </div>
 
           {!menuCards && (
-            <button onClick={amount !== 0 ? showMenuPledges : undefined}>
+            <button onClick={amount !== 0 ? openMenuPledges : undefined}>
               Select Reward
             </button>
           )}

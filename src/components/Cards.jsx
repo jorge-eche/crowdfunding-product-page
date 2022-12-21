@@ -1,17 +1,20 @@
-import { useState } from 'react';
 import Card from './Card.jsx';
 
 const Cards = ({
   menuCards,
   addPledge,
-  showMenuPledges,
   showThankYou,
   cards,
   setCards,
+  activePledge,
+  setActivePledge,
+  showMenuPledges
 }) => {
-  const [activePledge, setActivePledge] = useState(null);
+
 
   const filteredCards = cards.filter((card) => card.subtitle);
+
+
 
   return (
     <>
@@ -35,15 +38,18 @@ const Cards = ({
         </>
       ) : (
         <>
-          {filteredCards.map((card) => (
+          {filteredCards.map((card, index) => (
             <Card
               key={card.title}
               card={card}
+              index={index}
               menuCards={menuCards}
-              showMenuPledges={showMenuPledges}
               showThankYou={showThankYou}
               cards={cards}
               setCards={setCards}
+              activePledge={activePledge}
+              setActivePledge={setActivePledge}
+              showMenuPledges={showMenuPledges}
             />
           ))}
         </>

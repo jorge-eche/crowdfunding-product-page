@@ -8,6 +8,8 @@ const MenuPledges = ({
   showThankYou,
   cards,
   setCards,
+  activePledge,
+  setActivePledge
 }) => {
   return (
     <div
@@ -41,6 +43,8 @@ const MenuPledges = ({
         showThankYou={showThankYou}
         cards={cards}
         setCards={setCards}
+        activePledge={activePledge}
+        setActivePledge={setActivePledge}
       />
     </div>
   );

@@ -21,6 +21,7 @@ function App() {
   const [menuCards, setMenuCards] = useState(false);
   const [isThankYou, setIsThankYou] = useState(false);
 
+  const [activePledge, setActivePledge] = useState(null);
 
 //Persist funds, backers and cards (amount of the pledges) in Local Storage
   useEffect(() => {
@@ -91,10 +92,12 @@ function App() {
       <Stats funds={funds} backers={backers} />
       <About
         menuCards={menuCards}
-        showMenuPledges={showMenuPledges}
         showThankYou={showThankYou}
         cards={cards}
         setCards={setCards}
+        activePledge={activePledge}
+        setActivePledge={setActivePledge}
+        showMenuPledges={showMenuPledges}
       />
 
       {modal && (
@@ -113,6 +116,8 @@ function App() {
           showThankYou={showThankYou}
           cards={cards}
           setCards={setCards}
+          activePledge={activePledge}
+          setActivePledge={setActivePledge}
         />
       )}
     </div>

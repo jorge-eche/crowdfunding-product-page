@@ -3,10 +3,12 @@ import './About.css'
 
 const About = ({
   menuCards,
-  showMenuPledges,
   showThankYou,
   cards,
   setCards,
+  activePledge,
+  setActivePledge,
+  showMenuPledges
 }) => {
   return (
     <div className="container">
@@ -25,10 +27,12 @@ const About = ({
       </p>
       <Cards
         menuCards={menuCards}
-        showMenuPledges={showMenuPledges}
         showThankYou={showThankYou}
         cards={cards}
         setCards={setCards}
+        activePledge={activePledge}
+        setActivePledge={setActivePledge}
+        showMenuPledges={showMenuPledges}
       />
     </div>
   );
