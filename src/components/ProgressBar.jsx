@@ -8,7 +8,8 @@ const ProgressBar = ({funds}) => {
 
   useEffect(() => {
     const percentage = (funds * 100) / 100000
-    const roundedPercentage = roundNumber(percentage)
+    let roundedPercentage = roundNumber(percentage)
+    if (roundedPercentage > 100) roundedPercentage = 100
     setProgress(roundedPercentage)
   }, [funds])
   

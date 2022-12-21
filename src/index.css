@@ -80,5 +80,6 @@ button:hover {
 .fix {
   overflow: hidden;
   height: 100vh;
+  position: relative;
 }
 

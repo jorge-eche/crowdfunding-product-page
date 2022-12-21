@@ -29,26 +29,26 @@ const MenuHeader = ({
 
       <nav className='container container-menu'>
         <ul>
-          <a href='#title' onClick={goToAbout}>
-            <li className="menu-item" >
+          <li className="menu-item" >
+            <a className='link-menu-header' href='#title' onClick={goToAbout}>
               <span>About</span>
-            </li>
-          </a>
+            </a>
+          </li>
 
-          <a>
-            <li className="menu-item">
+          <li className="menu-item">
+            <a>
               <span>Discover</span>
-            </li>
-          </a>
+            </a>
+          </li>
 
-          <a>
-            <li
+          <li
             className="menu-item" 
             onClick={showMenuPledges}
             >
-              <span>Get Started</span>
-            </li>
-          </a>           
+              <a>
+                <span>Get Started</span>
+              </a>
+          </li>         
         </ul>
       </nav>   
     </>

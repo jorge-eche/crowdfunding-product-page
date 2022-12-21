@@ -42,3 +42,12 @@
     border-bottom: none;
 }
 
+ul .link-menu-header {
+    text-decoration: none;
+}
+
+ul .link-menu-header:visited {
+    text-decoration: none;
+    color: var(--black);
+}
+
