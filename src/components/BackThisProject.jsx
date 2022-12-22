@@ -1,10 +1,17 @@
+import { useState } from "react";
 import "./BackThisProject.css";
 import MastercraftLogo from "../img/logo-mastercraft.svg";
 
 const BackThisProject = ({
-  showMenuPledges,
-  showBookmarkAlert
+  showMenuPledges
 }) => {
+
+  const [ isBookmarked, setIsBookmarked ] = useState(false)
+
+  const changeBookmarkBtn = ()=> {
+
+    setIsBookmarked(prevIsBookmarked => !prevIsBookmarked)
+  }
 
   return (
     <div className="container">
@@ -29,11 +36,11 @@ const BackThisProject = ({
               height="56"
             >
               <g fill="none" fillRule="evenodd">
-                <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
-                <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                <circle id={isBookmarked ? "bookmark-circle" : undefined} fill="#2F2F2F" cx="28" cy="28" r="28" />
+                <path id={isBookmarked ? "bookmark-path" : undefined} fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
               </g>
             </svg>
-            <button id="bookmark" onClick={showBookmarkAlert}>Bookmark</button>
+            <button id="bookmark" className={isBookmarked ? "bookmark-btn" : undefined} onClick={changeBookmarkBtn}>{isBookmarked ? 'Bookmarked' : 'Bookmark'}</button>
         </label>
       </div>
     </div>

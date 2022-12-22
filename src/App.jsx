@@ -15,8 +15,6 @@ function App() {
   const [modal, setModal] = useState(false);
 
   const [menuHeader, setMenuHeader] = useState(false);
-
-  const [isBookmark, setIsBookmark] = useState(false);
   
   const [menuCards, setMenuCards] = useState(false);
   const [isThankYou, setIsThankYou] = useState(false);
@@ -64,13 +62,6 @@ function App() {
     }, 500);
   };
 
-  const showBookmarkAlert = () => {
-    setModal(true);
-    setTimeout(() => {
-      setIsBookmark(true);
-    }, 500);
-  };
-
   const showThankYou = () => {
     setMenuCards(false);
     setTimeout(() => {
@@ -87,7 +78,6 @@ function App() {
       />
       <BackThisProject
         showMenuPledges={showMenuPledges}
-        showBookmarkAlert={showBookmarkAlert}
       />
       <Stats funds={funds} backers={backers} />
       <About
@@ -111,8 +101,6 @@ function App() {
           isThankYou={isThankYou}
           setIsThankYou={setIsThankYou}
           showMenuPledges={showMenuPledges}
-          isBookmark={isBookmark}
-          setIsBookmark={setIsBookmark}
           showThankYou={showThankYou}
           cards={cards}
           setCards={setCards}
