@@ -34,7 +34,6 @@ const Card = ({
   const openMenuPledges = () => {
     setActivePledge(index + 1);
     showMenuPledges()
-
   };
 
   return (
@@ -49,7 +48,7 @@ const Card = ({
         <div className="flex-row">
           {menuCards && (
             <div id="ball">
-              <div id="green-ball"></div>
+              {activePledge === index && <div id="green-ball"></div>}
             </div>
           )}
 

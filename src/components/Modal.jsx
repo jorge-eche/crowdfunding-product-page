@@ -23,6 +23,7 @@ const Modal = ({
   setActivePledge
 }) => {
   const hideModal = () => {
+    setActivePledge(null) 
     setMenuCards(false);
     setMenuHeader(false);
     setIsThankYou(false);

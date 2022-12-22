@@ -99,14 +99,14 @@
     border: 1.5px solid rgba(192,192,192, .5);
 }
 
-.card-style-modal:focus #green-ball {
+#green-ball {
     width: 1rem;
     height: 1rem;
     border-radius: inherit;
     background-color: var(--moderate-cyan);
 }
 
-.no-stock.card-style-modal:focus #green-ball {
+.no-stock.card-style-modal #green-ball {
     width: 0;
     height: 0;
 }
