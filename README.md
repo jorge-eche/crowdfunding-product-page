@@ -31,6 +31,10 @@ Users should be able to:
 ### Screenshot
 
 ![Screenshot of the project](./src/design/crowdfunding-screenshot.png)
+![Screenshot Modal](./src/design/desktop-design-modal-default.jpg)
+![Screenshot Modal 2](desktop-design-modal-selected.jpg)
+![Screenshot Modal completed](desktop-design-modal-completed.jpg)
+
 
 ### Links
 
@@ -66,6 +70,7 @@ I am also planning to expand my Typescript knowledge and make a project with it.
 
 - Frontend Mentor - [@jorge-eche](https://www.frontendmentor.io/profile/jorge-eche)
 - Twitter - [@CokoEche](https://twitter.com/CokoEche)
+- LinkedIn - [@jorgeecheverria-dev/] (https://www.linkedin.com/in/jorgeecheverria-dev/)
 
 ## Acknowledgments
 
