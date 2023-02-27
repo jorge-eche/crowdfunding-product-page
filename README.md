@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/crowdfunding-screenshot.png)
+![Screenshot of the project](./src/design/crowdfunding-screenshot.png)
 
 ### Links
 
