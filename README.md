@@ -54,7 +54,7 @@ Users should be able to:
 ### What I learned
 
 This was my first 'big' project.
-First of all, I practiced my HTML and CSS knowledge, which at the moment was kind of relegated to the back because in every tutorial I had done, the design was give, so I never had to think much about it. This project was a complete website, with Modals, buttons, progress bars, you name it, and it was quite challenging to keep it responsive.
+First of all, I practiced my HTML and CSS knowledge, which at the moment was kind of relegated to the back because in every tutorial I had done, the design was given, so I never had to think much about it. This project is a complete website, with Modals, buttons, progress bars, you name it, and it was quite challenging to keep it responsive.
 I learn that styling the elements of a full website with just vanilla CSS can get quite messy and you really need to think of new names for IDs and classes, which is not fun at all. I will learn Styled Components for my next projects.
 Second, I got to keep on honing my JS and React knowledge. I got better at designing the whole framework of the page, deciding where should the components be settled and how to pass props to them.
 The component Cards gave me some headaches because I had two .maps on the object that contains the list of pledges, so I learned to pass the props on both .maps not just one as I first did.
