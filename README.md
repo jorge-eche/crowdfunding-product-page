@@ -32,8 +32,8 @@ Users should be able to:
 
 ![Screenshot of the project](./src/design/crowdfunding-screenshot.png)
 ![Screenshot Modal](./src/design/desktop-design-modal-default.jpg)
-![Screenshot Modal 2](desktop-design-modal-selected.jpg)
-![Screenshot Modal completed](desktop-design-modal-completed.jpg)
+![Screenshot Modal 2](./src/design/desktop-design-modal-selected.jpg)
+![Screenshot Modal completed](./src/design/desktop-design-modal-completed.jpg)
 
 
 ### Links
