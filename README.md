@@ -8,7 +8,7 @@ This is a solution to the [Crowdfunding product page challenge on Frontend Mento
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
+  - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
@@ -51,13 +51,13 @@ Users should be able to:
 - Vanilla CSS - For styles
 - [React](https://reactjs.org/) - JS library
 
-### What I learned
+### What I learned - Why I built the project this way
 
-This was my first 'big' project.
-First of all, I practiced my HTML and CSS knowledge, which at the moment was kind of relegated to the back because in every tutorial I had done, the design was given, so I never had to think much about it. This project is a complete website, with Modals, buttons, progress bars, you name it, and it was quite challenging to keep it responsive.
-I learn that styling the elements of a full website with just vanilla CSS can get quite messy and you really need to think of new names for IDs and classes, which is not fun at all. I will learn Styled Components for my next projects.
+For this project I used vanilla CSS on purpose instead of libraries and this was for two reasons. The first one is that every company uses different libraries for CSS: some prefer CSS-in-JS solutions like styled-components while others would rather use Tailwind, Tachyons or SASS. Other use Bootstrap instead. For this reason I decided to start with vanilla CSS, because no matter which approach a company follows, having better plain CSS skills would definitely help me.
+The second reason I used vanilla CSS for this project is that beforehand I was stuck in 'tutorial hell' and in every course I took the HTML-and-CSS part of the code was taken care of by the teacher, so I felt a little bit unsure about my knowledge on the Design Department. To my surprise, I managed quite well although not without its difficulties, as I will explain in the next paragraph.
+I learned many interesting things by building this website. To begin with, I learned that styling the elements of a big website with just plain CSS can get quite messy and you need to be really creative and organized to think of new names for IDs and classes, which is not fun at all. That is why I will learn Styled Components for my next projects.
 Second, I got to keep on honing my JS and React knowledge. I got better at designing the whole framework of the page, deciding where should the components be settled and how to pass props to them.
-The component Cards gave me some headaches because I had two .maps on the object that contains the list of pledges, so I learned to pass the props on both .maps not just one as I first did.
+The component Cards gave me some headaches because I had two '.maps' on the object that contains the list of pledges, so I learned to pass the props on both .maps not just one as I first did.
 It was also very challenging to build the EnterPledge component, the one that contains the form that the client is going to fill for making the pledge. I felt so proud of myself when I could make it.
 Last but no least, I lost the fear of programming on my own, without the guide of the voice behind the tutorials. It gave me the confidence I needed to start doing real programming once and for all, I loved it!
 
