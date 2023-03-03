@@ -45,11 +45,12 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
+- [React](https://reactjs.org/) - JS library
+- [Vite](https://vitejs.dev/) - React environment
+- [CSS3](https://www.w3.org/Style/CSS/) - For style
+- [Semantic HTML5 markup](https://www.w3.org/html/) - For the web structure
 - Flexbox
 - Mobile-first workflow
-- Vanilla CSS - For styles
-- [React](https://reactjs.org/) - JS library
 
 ### What I learned - Why I built the project this way
 
