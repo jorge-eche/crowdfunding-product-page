@@ -49,6 +49,7 @@ Users should be able to:
 
 - [React](https://reactjs.org/) - JS library
 - [Vite](https://vitejs.dev/) - React environment
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Language
 - [CSS3](https://www.w3.org/Style/CSS/) - For style
 - [Semantic HTML5 markup](https://www.w3.org/html/) - For the web structure
 - Flexbox
